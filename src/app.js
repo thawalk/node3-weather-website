@@ -5,7 +5,7 @@ const hbs = require('hbs')
 const app = express()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
+const port = process.env.PORT || 3000
 
 // console.log(__dirname)
 // console.log(path.join(__dirname, '../public'))
@@ -111,7 +111,7 @@ app.get('*',(req, res) => {
         errorMessage: 'Page not found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.');
+app.listen(port, () => {
+    console.log('Server is up on port' + port);
 })
 
